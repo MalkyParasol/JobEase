@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'JobSearch-Client';
+export class AppComponent implements OnInit{
+  title = 'JobEase';
+ 
+  constructor(private router:Router){
+    
+  }
+  ngOnInit(): void {
+   if(localStorage.getItem("user")==null)
+    {
+      this.router.navigate(['/login']);
+    }
+  }
 }
