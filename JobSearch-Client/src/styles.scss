@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+body {
+    display: flex; /* Enable flexbox for body */
+    min-height: 100vh; /* Set minimum body height for full viewport */
+    margin: 0;
+  }
+  
+  app-root {
+    flex: 1; /* Allow app-root to grow and fill remaining space */
+  }

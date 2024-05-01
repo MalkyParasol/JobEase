@@ -1,5 +1,46 @@
-#slogan{
+#login-component {
+  background-image: url("../../../assets/background3.png");
+  background-size: 100% 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.blue {
+ color: rgb(6, 138, 164);
+// color: rgb(3, 95, 113);
+//color: rgb(236, 10, 112);
+}
+.pink{
+    font-weight: bold;
+    color:rgb(201, 9, 78)
     
-    color: rgb(6, 138, 164)
-    
+}
+#logo{
+    width: 20%;
+}
+input{
+    border-style:solid;
+    border-top: hidden;
+    border-right: hidden;
+    border-left: hidden;
+    margin: 2px;
+    height: 40px;
+    width: 250px;
+    font-size: larger;
+}
+button{
+    background-color:rgb(202, 98, 136);
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 25px;
+    height: 40px;
+    width: 80px;
+    border-color: dimgray;
+    font-size: large;
 }

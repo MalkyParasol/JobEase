@@ -1,15 +1,18 @@
-<div id="login-component">
-    <img src="../../../assets/JobEaseLogo.png" >
-    <h1 id="slogan" class="heading">Your Job Search Starts Here!</h1>
-    <form [formGroup]="loginForm!">
-        <div>
-            <label>user name:</label>
+<div id="login-component" class="flex">
+    <!-- <div id="background-container"> -->
+        <!-- <img src="../../../assets/background.png" id="background"> -->
+    <!-- </div> -->
+    <img src="../../../assets/logo2.png" id="logo">
+    <h1  class="heading blue" >Your Job Search Starts Here!</h1>
+    <form [formGroup]="loginForm!" class="flex">
+        <div class="flex">
+            <label class="pink">user name:</label>
             <input type="text" formControlName="name" name="name" id="name">
         </div>
-        <div>
-            <label>password:</label>
+        <div class="flex">
+            <label class="pink">password:</label>
             <input type="password" formControlName="password" name="password" id="password">
         </div>
-        <button type="submit" (click)="login()">login</button>
+        <button type="submit" (click)="login()">Login</button>
     </form>    
 </div>

@@ -3,6 +3,16 @@ using JobSearch_Server.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddCors(options =>
+{
+
+    options.AddPolicy("AllowAngularOrigin", builder =>
+    {
+        builder.WithOrigins("http://localhost:4200") // Replace with your Angular app's origin
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
 
 builder.Services.AddControllers();
 builder.Services.AddJobSearch();
@@ -17,6 +27,12 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseCors(options =>
+    {
+        options.AllowAnyHeader();
+        options.AllowAnyOrigin();
+        options.AllowAnyMethod();
+    });
 }
 
 app.UseHttpsRedirection();
