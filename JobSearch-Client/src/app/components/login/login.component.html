@@ -1,1 +1,15 @@
-<p>login works!</p>
+<div id="login-component">
+    <img src="../../../assets/JobEaseLogo.png" >
+    <h1 id="slogan" class="heading">Your Job Search Starts Here!</h1>
+    <form [formGroup]="loginForm!">
+        <div>
+            <label>user name:</label>
+            <input type="text" formControlName="name" name="name" id="name">
+        </div>
+        <div>
+            <label>password:</label>
+            <input type="password" formControlName="password" name="password" id="password">
+        </div>
+        <button type="submit" (click)="login()">login</button>
+    </form>    
+</div>

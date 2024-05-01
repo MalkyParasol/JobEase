@@ -13,7 +13,7 @@ export class AppComponent implements OnInit{
     
   }
   ngOnInit(): void {
-   if(localStorage.getItem("user")==null)
+   if(localStorage.getItem("currentUser")==null)
     {
       this.router.navigate(['/login']);
     }
