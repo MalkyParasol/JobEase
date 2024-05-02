@@ -7,9 +7,9 @@ namespace JobSearch_Server.Services
     {
         private List<Job> JobsList = new List<Job>()
         {
-            new Job(JobFields.QA,"AQ job",7,Areas.Wipe,"creative and motivated person",true),
+            new Job(JobFields.QA,"QA job",7,Areas.Wipe,"creative and motivated person",true),
             new Job(JobFields.HighTech,"High Tech job",8.5,Areas.North,"Angular developer at least one year experience",false),
-            new Job(JobFields.QA,"AQ job",8,Areas.North,"one year experience",false),
+            new Job(JobFields.QA,"QA job",8,Areas.North,"one year experience",false),
             new Job(JobFields.HighTech,"High Tech job",9.5,Areas.Coordinator,"front end developer at least two years experience",false),
             new Job(JobFields.Deliveries,"pizza deliver job",12,Areas.Lowland,"quickly and fast person with car in his own",false),
             new Job(JobFields.Sewing,"Sewing teacher job",4,Areas.Lowland,"great teacher for sewing, at least 5 years in the field",false),

@@ -5,8 +5,8 @@ body {
     display: flex; /* Enable flexbox for body */
     min-height: 100vh; /* Set minimum body height for full viewport */
     margin: 0;
-  }
+}
   
-  app-root {
-    flex: 1; /* Allow app-root to grow and fill remaining space */
-  }
+app-root {
+  flex: 1; /* Allow app-root to grow and fill remaining space */
+}

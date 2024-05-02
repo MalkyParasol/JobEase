@@ -1,1 +1,9 @@
-<p>job works!</p>
+<div id="job-component">
+    <h1 class="pink">{{job?.name}}</h1>
+    <p class="orange">{{jobField[job?.field!]}}</p>
+    <p><span class="bold">Area:</span> {{jobArea[job?.area!]}}</p>
+    <p><span class="bold">Scope of hours:</span> {{job?.scopeHours}}</p>
+    <button>show details</button>
+    <button>send CV</button>
+</div>
+

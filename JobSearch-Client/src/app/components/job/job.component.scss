@@ -1,0 +1,30 @@
+#job-component{
+    background-color:azure;
+    //border-radius: 25%;
+    //border:solid;
+    //border-color:rgb(6, 138, 164) ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    margin: 20px;
+}
+.pink{
+    color:rgb(201, 9, 78);
+}
+.orange{
+  background-color: rgb(82, 244, 98);
+  font-style: italic;
+  border-radius: 20px;
+  padding: 4px;
+}
+button{
+    cursor: pointer;
+    margin: 8px;
+    border-radius: 25px;
+    padding: 4px;
+    border-color: dimgray;
+}
+.bold{
+    font-weight:bold;
+}
