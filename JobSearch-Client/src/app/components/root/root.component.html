@@ -6,8 +6,8 @@
         <h2 >Looking for: <label (click)="switchFilete()" class="blue" id="userJobField">{{userJobField}}</label></h2>
     </div>
     <div id="body">
-        <app-jobs-list *ngIf="filterOn" [jobField]="user?.jobField" ></app-jobs-list>
-        <app-jobs-list *ngIf="!filterOn" [jobField]="undefined" ></app-jobs-list>
+        <app-jobs-list *ngIf="filterOn" [userField]="user?.jobField" ></app-jobs-list>
+        <app-jobs-list *ngIf="!filterOn" [userField]="undefined" ></app-jobs-list>
     </div>
     <div id="footer">
         <h3>Contact Us:</h3>
