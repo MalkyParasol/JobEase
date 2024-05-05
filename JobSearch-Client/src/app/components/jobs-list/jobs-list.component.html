@@ -1,25 +1,7 @@
 <h1  class="alignCente">Vacancies</h1>
-<!-- *ngIf="jobField == undefined" -->
-<!-- <h1 *ngIf="jobField != undefined" class="alignCente">
-  {{ jobFieldEnum[jobField] }}
-</h1> -->
 <div id="filtering">
-  <div id="filterByField">
-    <button (click)="ActivateFieldFilter()">filter By Field</button>
-    <label *ngIf="!filterByFieldOn">Filter Off</label>
-    <!-- <label  *ngIf="filterByFieldOn">Filter On</label> -->
-    <div id="optionsToFilter" *ngIf="filterByFieldOn">
-      <div *ngFor="let field of fieldKeys()">
-       <!-- <span>{{field}}</span> -->
-       <input type="checkbox" id="{{field}}" value="false">
-       <label for="myCheckbox">{{field}}</label>
-      </div>
-      <button (click)="filteringField()">Filter</button>
-    </div>
-  </div>
-  <div id="filterByArea">
-    <button (click)="ActivateAreaFilter">filter By Area</button>
-  </div>
+  <app-filter [filterBy]="'areas'" [enum]="jobAreaEnum" (onFilter)="filterAreaJobs($event)"></app-filter>
+  <app-filter [filterBy]="'fields'" [enum]="jobFieldEnum" (onFilter)="filterFieldJobs($event)"></app-filter>
 </div>
 <div id="allList">
   <div *ngFor="let j of jobsList" id="jobList">

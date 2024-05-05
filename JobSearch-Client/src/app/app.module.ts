@@ -12,6 +12,8 @@ import { LoginService } from './services/login.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { JobsListService } from './services/jobs-list.service';
+import { FilterComponent } from './components/filter/filter.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,15 @@ import { JobsListService } from './services/jobs-list.service';
     RootComponent,
     JobComponent,
     JobsListComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [LoginService,JobsListService],
   bootstrap: [AppComponent]

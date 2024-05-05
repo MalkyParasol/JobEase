@@ -5,14 +5,6 @@ import { Job } from '../../models/job';
 import { NavigationEnd, Router } from '@angular/router';
 import { Areas } from '../../models/areas';
 
-import { Pipe, PipeTransform } from '@angular/core';
-
-// @Pipe({ name: 'enumLabels' })
-// export class EnumLabelsPipe implements PipeTransform {
-//   transform(value: any): string[] {
-//     return Object.values(value);
-//   }
-// }
 
 @Component({
   selector: 'app-jobs-list',
@@ -24,26 +16,14 @@ export class JobsListComponent implements OnInit {
   @Input() userField: jobFields | undefined; 
 
   jobFieldEnum = jobFields ;
+
+  jobAreaEnum = Areas;
   
-  //fieldTypes = jobFields as unknown as jobFields[]
-
-  fieldKeys ():Array<string>{
-    const keys = Object.keys(this.jobFieldEnum);
-    return keys.slice(keys.length/2);
-  }
-
   jobsList: Job[] = [];
 
-  filterByFieldOn:boolean = false;
+  FieldFilter : Number[] = [];
 
-  filterByAreaOn:boolean = false;
-
-  FieldFilter : jobFields | null = null;
-
-  AreaFilter : Areas | null = null;
-
-  //Object: any;
-
+  AreaFilter : Number[] = [];
   
 
   constructor(private router: Router, private jobsListService: JobsListService) {}
@@ -51,7 +31,7 @@ export class JobsListComponent implements OnInit {
   
 
   ngOnInit() {
-    this.jobsListService.getJobs().subscribe((jobs) => (this.jobsList = jobs));
+    this.jobsListService.getFilteJobs(this.FieldFilter,this.AreaFilter).subscribe((jobs)=> (this.jobsList = jobs));
     if (this.userField == undefined) {
       this.router.navigate(['jobs']);
     } else {
@@ -59,31 +39,22 @@ export class JobsListComponent implements OnInit {
     }
   }
   
-  // transform(value: any): string[] {
-  //   return Object.values(value);
-  // }
 
-  ActivateAreaFilter(){
-    this.filterByAreaOn = true;
-  }
-
-  ActivateFieldFilter(){
-    this.filterByFieldOn = true;
-  }
-
-  arrayField(){
-    let enumLength = 0;
-    for(const field in jobFields){
-        if (isNaN(Number(field))) { 
-          enumLength++;
-      }
-    }
-    return new Array(enumLength);
-
-  }
 
   filteringField(){
     this.jobsList = this.jobsList.filter(job=>job.name == "AQ job");
+  }
+
+  filterFieldJobs(filters:any[]){
+
+    this.FieldFilter = filters;
+    this.jobsListService.getFilteJobs(this.FieldFilter,this.AreaFilter).subscribe((jobs)=> (this.jobsList = jobs))
+    console.log(this.jobsList);
+  }
+
+  filterAreaJobs(filters:any[]){
+    this.AreaFilter = filters;
+    this.jobsListService.getFilteJobs(this.FieldFilter,this.AreaFilter).subscribe((jobs)=> (this.jobsList = jobs));
   }
   
 }
