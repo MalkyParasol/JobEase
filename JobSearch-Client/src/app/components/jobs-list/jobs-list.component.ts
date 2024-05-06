@@ -24,6 +24,8 @@ export class JobsListComponent implements OnInit {
   FieldFilter : Number[] = [];
 
   AreaFilter : Number[] = [];
+
+  jobSubmited : {name:string,field:jobFields}[] = [];
   
 
   constructor(private router: Router, private jobsListService: JobsListService) {}
@@ -55,6 +57,10 @@ export class JobsListComponent implements OnInit {
   filterAreaJobs(filters:any[]){
     this.AreaFilter = filters;
     this.jobsListService.getFilteJobs(this.FieldFilter,this.AreaFilter).subscribe((jobs)=> (this.jobsList = jobs));
+  }
+
+  addJobSubmited(job : {name:string,field:jobFields}){
+    this.jobSubmited.push(job);
   }
   
 }

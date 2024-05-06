@@ -1,13 +1,27 @@
-<h1  class="alignCente">Vacancies</h1>
-<div id="filtering">
-  <app-filter [filterBy]="'areas'" [enum]="jobAreaEnum" (onFilter)="filterAreaJobs($event)"></app-filter>
-  <app-filter [filterBy]="'fields'" [enum]="jobFieldEnum" (onFilter)="filterFieldJobs($event)"></app-filter>
-</div>
-<div id="allList">
-  <div *ngFor="let j of jobsList" id="jobList">
-    <app-job
-      *ngIf="userField == undefined || userField == j.field"
-      [job]="j"
-    ></app-job>
+<div id="allBody">
+  <div id="filtering">
+    <h3 class="alignCenter">Filters</h3>
+    <app-filter [filterBy]="'areas'" [enum]="jobAreaEnum" (onFilter)="filterAreaJobs($event)"></app-filter>
+    <app-filter [filterBy]="'fields'" [enum]="jobFieldEnum" (onFilter)="filterFieldJobs($event)"></app-filter>
+  </div>
+  <div id="allList">
+    <h1  class="alignCenter">Available Jobs</h1>
+    <div *ngFor="let j of jobsList" id="jobList">
+      <app-job
+        *ngIf="userField == undefined || userField == j.field"
+        [job]="j" (addJobSubmited)="addJobSubmited($event)"
+      ></app-job>
+    </div>
+  </div>
+  <div id="jobSubmited" *ngIf="jobSubmited.length>0">
+    <h3 class="alignCenter">Submitted Applications</h3>
+    <ul *ngFor="let jobDetais of jobSubmited">
+      <li>
+        <p><span class="bold">{{jobFieldEnum[ jobDetais.field]}}: </span>{{jobDetais.name}}</p>
+        
+      </li>
+    </ul>
   </div>
 </div>
+
+

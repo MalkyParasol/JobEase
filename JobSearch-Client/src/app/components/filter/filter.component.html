@@ -1,12 +1,12 @@
 <div id="filter-component">
     <button (click)="ActivateAreaFilter()">Filter By {{filterBy}}</button>
-    <form ngform>
+    <form ngform id="filteForm">
         <div *ngIf="filterOn==true">
             <div *ngFor="let filter of filters">
                 <input type="checkbox" [(ngModel)]="filter.selected" id="{{filter.value}}" name="filter-{{filter.value}}">
                 <label for="{{filter.value}}">{{ filter.lable }}</label>
             </div>
-            <button type="submit" (click)="filter()">filter</button>
+            <button type="submit" (click)="filter()" >filter</button>
         </div>
     </form>
     

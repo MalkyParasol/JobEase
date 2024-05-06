@@ -3,7 +3,17 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
+  flex-direction: column;
 }
-.alignCente{
+.alignCenter{
     text-align: center;
 }
+.bold{
+  font-weight:bold;
+}
+#allBody{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
