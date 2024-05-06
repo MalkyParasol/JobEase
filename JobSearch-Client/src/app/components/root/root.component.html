@@ -2,7 +2,7 @@
     <div id="header">
         <img src="../../../assets/logo.png" alt="" id="logo" (click)="navigateToLogin()">
         <h2 >User Name: <label class="blue">{{user?.name}}</label></h2>
-        <h2 >Number of CVs sent: <label class="blue">{{numCVs}}</label></h2>
+        <h2 >Number of CVs sent: <label class="blue">{{jobService.numCVs}}</label></h2>
         <h2 >Looking for: <label (click)="switchFilete()" class="blue" id="userJobField">{{userJobField}}</label></h2>
     </div>
     <div id="body">

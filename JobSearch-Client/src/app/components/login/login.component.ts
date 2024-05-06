@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from '../../models/user';
 import { jobFields } from '../../models/fields';
 import { Router } from '@angular/router';
+import { JobsListService } from '../../services/jobs-list.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   
   loginForm: FormGroup | null = null;
 
-  constructor(private loginService: LoginService,private router:Router) {}
+  constructor(private loginService: LoginService,private router:Router,private jobsListService:JobsListService) {}
 
   ngOnInit() {
     this.loginForm = new FormGroup({
@@ -35,6 +36,7 @@ export class LoginComponent implements OnInit {
         if(user){
           localStorage.setItem('currentUser', JSON.stringify(user));
           this.router.navigate(['']);
+          this.jobsListService.numCVs = 0;
         }
         else{
           alert("Invalid username or password!");

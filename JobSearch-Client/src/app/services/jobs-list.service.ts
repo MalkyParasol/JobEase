@@ -11,6 +11,8 @@ export class JobsListService {
   constructor(private http:HttpClient) { }
 
   allJobs: Job[] = [];
+
+  numCVs  = 0;
   
 
   getJobs():Observable<Job[]>{
@@ -35,5 +37,11 @@ export class JobsListService {
      );
     
   }
+
+  addCv(){
+    this.numCVs++;
+  }
+
+  
   
 }

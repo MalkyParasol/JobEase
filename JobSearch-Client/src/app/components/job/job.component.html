@@ -3,7 +3,26 @@
     <p class="orange">{{jobField[job?.field!]}}</p>
     <p><span class="bold">Area:</span> {{jobArea[job?.area!]}}</p>
     <p><span class="bold">Scope of hours:</span> {{job?.scopeHours}}</p>
-    <button>show details</button>
-    <button>send CV</button>
+    <button (click)="showHideDetails()">{{showDetailsOn ? 'hide details' : 'show details'}}</button>
+    <p *ngIf="showDetailsOn"><span class="bold">Requirements:</span> {{job?.requirements}}</p>
+    <p *ngIf="showDetailsOn" class="bold">Work{{!job?.workingFromHome?' is not':''}} from home</p>
+    <button (click)="showSendingInput()">send CV</button>
+    
+    <div *ngIf="sendingCvOn && !cvSended">
+            <label for="file-upload" class="custom-file-upload">
+                Custom Upload
+              </label>
+              <input id="file-upload" type="file" (change)="onFileSelected($event)" />
+            
+              <span *ngIf="selectedFile" class="selected-file">
+                Selected file: {{ selectedFile.name }}
+              </span>
+           
+              <button  (click)="sendingCv()">Send</button>
+          
+    </div>
+
+    <p *ngIf="sendingCvOn && cvSended" class="bold">CV has already been sent</p>
+
 </div>
 

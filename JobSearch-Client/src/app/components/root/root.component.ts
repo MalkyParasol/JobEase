@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../../models/user';
 import { jobFields } from '../../models/fields';
+import { JobsListService } from '../../services/jobs-list.service';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +12,14 @@ import { jobFields } from '../../models/fields';
 export class RootComponent implements OnInit {
 
   user:User|null = null;
-  numCVs : Number = 0;
+  //numCVs : Number = this.jobsListService.numCVs;
   userJobField:string|null = null;
+  
   filterOn: boolean = false;
-  constructor(private router:Router) { }
+
+  jobService = this.jobsListService;
+  
+  constructor(private router:Router,private jobsListService:JobsListService) { }
   ngOnInit()  {
     this.getStorageData();
     
@@ -27,7 +32,7 @@ export class RootComponent implements OnInit {
   }
   getStorageData(){
     const currentUser = localStorage.getItem("currentUser");
-    const num = localStorage.getItem("numCVs");
+    // const num = localStorage.getItem("numCVs");
     if(currentUser==null)
     {
         this.router.navigate(['/login']);
@@ -35,10 +40,10 @@ export class RootComponent implements OnInit {
     else{
      this.user = JSON.parse(currentUser);
     }
-    if(num)
-    {
-      this.numCVs =Number(num) ;
-    }
+    // if(num)
+    // {
+    //   this.numCVs =Number(num) ;
+    // }
     if (this.user?.jobField !== undefined) {
        this.userJobField = jobFields[this.user.jobField];
     }
