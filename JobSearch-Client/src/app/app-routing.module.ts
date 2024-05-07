@@ -12,7 +12,6 @@ const routes: Routes = [
     }]
   },
   {path:'login',component:LoginComponent},
-  //{path: 'jobs',component:JobsListComponent},
   {path:"**",component:NotFoundComponent}
 ];
 

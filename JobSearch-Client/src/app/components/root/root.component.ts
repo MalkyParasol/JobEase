@@ -12,7 +12,7 @@ import { JobsListService } from '../../services/jobs-list.service';
 export class RootComponent implements OnInit {
 
   user:User|null = null;
-  //numCVs : Number = this.jobsListService.numCVs;
+
   userJobField:string|null = null;
   
   filterOn: boolean = false;
@@ -40,10 +40,6 @@ export class RootComponent implements OnInit {
     else{
      this.user = JSON.parse(currentUser);
     }
-    // if(num)
-    // {
-    //   this.numCVs =Number(num) ;
-    // }
     if (this.user?.jobField !== undefined) {
        this.userJobField = jobFields[this.user.jobField];
     }

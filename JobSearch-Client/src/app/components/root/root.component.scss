@@ -5,9 +5,6 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
-    // height: 100%;
-    // position: fixed;
 }
 #logo{
     width: 80px;
@@ -17,7 +14,6 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    // padding: 8px;
     position: fixed;
     width: 100%;
     padding: 1em;
@@ -31,10 +27,9 @@
 }
 #footer{
    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Black with 0.5 opacity */
+    background-color: rgba(0, 0, 0, 0.7); 
     color: inherit;
     color:white;
-   // position: fixed;
 }
 #body{
     display: flex;
@@ -59,4 +54,7 @@ svg{
 }
 app-jobs-list{
     width: 100%;
+}
+button{
+    margin: 4px;
 }

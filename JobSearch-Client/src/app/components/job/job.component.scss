@@ -1,50 +1,49 @@
-#job-component{
-    background-color:azure;
-    //border-radius: 25%;
-    //border:solid;
-    //border-color:rgb(6, 138, 164) ;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 400px;
-    margin: 20px;
+#job-component {
+  background-color: azure;
+  //border-radius: 25%;
+  //border:solid;
+  //border-color:rgb(6, 138, 164) ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  margin: 20px;
 }
-.pink{
-    color:rgb(201, 9, 78);
+.pink {
+  color: rgb(201, 9, 78);
 }
-.orange{
+.orange {
   background-color: rgb(82, 244, 98);
   font-style: italic;
   border-radius: 20px;
   padding: 4px;
 }
-button{
-    cursor: pointer;
-    margin: 8px;
-    border-radius: 25px;
-    padding: 4px;
-    border-color: dimgray;
+button {
+  cursor: pointer;
+  margin: 8px;
+  border-radius: 25px;
+  padding: 4px;
+  border-color: dimgray;
 }
-.bold{
-    font-weight:bold;
+.bold {
+  font-weight: bold;
 }
-p{
-    text-align: center;
+p {
+  text-align: center;
 }
 
 input[type="file"] {
-    display: none;
-  }
-  
-  .custom-file-upload {
-    border: 1px solid #ccc;
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
-  }
+  display: none;
+}
 
-  .selected-file {
-    display: block;
-    margin-top: 5px;
-  }
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
 
+.selected-file {
+  display: block;
+  margin-top: 5px;
+}

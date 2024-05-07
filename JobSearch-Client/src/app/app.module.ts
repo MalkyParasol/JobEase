@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { JobsListService } from './services/jobs-list.service';
 import { FilterComponent } from './components/filter/filter.component';
 import { FormsModule } from '@angular/forms';
+import { CopyToClipboardDirective } from './directives/copy-to-clipboard.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     JobComponent,
     JobsListComponent,
     NotFoundComponent,
-    FilterComponent
+    FilterComponent,
+    CopyToClipboardDirective
   ],
   imports: [
     BrowserModule,
